@@ -6,7 +6,7 @@ class Book{
         return "My name is : ".self::$name;
     }
     public static function getAuthor(){
-        return self::author();
+        return static::author();
     }
 }
 
@@ -15,6 +15,6 @@ class NewBook extends Book{
         return "My name is ".self::$name." Sen";
     }
 }
-// $newBook = new NewBook;
-// echo $newBook->getAuthor(); //output is : My name is Rudra Sen (in non static)
-echo NewBook::getAuthor(); //output is : My name is Rudra (in static)
+
+echo Book::getAuthor(); //output is : My name is Rudra (in static)
+echo NewBook::getAuthor(); //output is : My name is Rudra Sen(in static)
